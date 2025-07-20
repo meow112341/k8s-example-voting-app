@@ -15,7 +15,7 @@ jobs:
     - name: Checkout code from GitHub to runner
       uses: actions/checkout@v2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUBTOKEN }}
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
