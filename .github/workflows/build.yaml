@@ -51,7 +51,7 @@ jobs:
         id: build-vote-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: voting-app
+          ECR_REPOSITORY: vote
           IMAGE_TAG: vote-${{ env.ENV }}-latest
         # Build docker images for vote module and push it to ECR so that it can be deployed to EKS
         run: |
@@ -64,7 +64,7 @@ jobs:
         id: build-result-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: voting-app
+          ECR_REPOSITORY: vote
           IMAGE_TAG: result-${{ env.ENV }}-latest
         # Build docker images for result module and push it to ECR so that it can be deployed to EKS.
         run: |
@@ -77,7 +77,7 @@ jobs:
         id: build-worker-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: voting-app
+          ECR_REPOSITORY: vote
           IMAGE_TAG: worker-${{ env.ENV }}-latest
         # Build docker images for worker module and push it to ECR so that it can be deployed to EKS
         run: |
